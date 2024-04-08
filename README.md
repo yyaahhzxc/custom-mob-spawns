@@ -1,4 +1,4 @@
-# Custom Spawns
+# Custom Mob Spawns
 
 ## License
 

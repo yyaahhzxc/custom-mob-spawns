@@ -1,0 +1,23 @@
+{
+	"required": true,
+	"package": "mod.azylooper.custommobspawns.mixin",
+	"compatibilityLevel": "JAVA_17",
+	"mixins": [
+		"MixinServerChunkManager",
+		"MixinSpawnHelperInfo",
+		"MixinMobSpawnerLogic",
+		"MixinSpawnGroup",
+
+		"entity.MixinAnimalEntity",
+		"entity.MixinChickenEntity",
+		"entity.MixinHostileEntity",
+		"entity.MixinWaterCreatureEntity",
+		"entity.MixinAmbientEntity",
+		"entity.MixinAbstractHorseEntity",
+		"entity.MixinPigEntity",
+		"entity.MixinTameableEntity"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}

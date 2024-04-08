@@ -1,39 +1,43 @@
 {
-  "schemaVersion": 1,
-  "id": "customspawns",
-  "version": "${version}",
-
-  "name": "Custom Spawns",
-  "description": "Simple configurable mob spawning.",
-  "authors": [
-    "b3spectacled"
-  ],
-  "contact": {
-    "homepage": "https://github.com/b3spectacled/",
-    "sources": "https://github.com/b3spectacled/custom-spawn"
-  },
-
-  "license": "MIT",
-  "icon": "assets/customspawn/icon.png",
-
-  "environment": "*",
-  "entrypoints": {
-    "main": [
-      "mod.bespectacled.customspawn.CustomSpawn"
-    ],
-    "modmenu": [
-      "mod.bespectacled.customspawn.config.CustomSpawnModMenu"
-    ]
-  },
-  "mixins": [
-    "custom_spawn.mixins.json"
-  ],
-
-  "depends": {
-    "fabricloader": ">=0.11.3",
-    "fabric": "*",
-    "minecraft": "1.19.4",
-    "java": ">=17",
-    "cloth-config2": "*"
-  }
+	"schemaVersion": 1,
+	"id": "custom-mob-spawns",
+	"version": "${version}",
+	"name": "Custom Mob Spawns",
+	"description": "Simple configurable mob spawning.\nPort of Custom Spawns to support 1.20 and beyond.\nThis particular build supports from 1.19.3 to 1.20.4 (versions between them works as well).",
+	"authors": [
+		"AzyLooper"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "MIT",
+	"icon": "assets/custom-mob-spawns/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"mod.azylooper.custommobspawns.CustomMobSpawns"
+		],
+		"modmenu": [
+			"mod.azylooper.custommobspawns.config.CustomMobSpawnModMenu"
+		]
+	},
+	"mixins": [
+		"custom-mob-spawns.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.11.3",
+		"minecraft": ">=1.19.3 <=1.20.4",
+		"java": ">=17",
+		"cloth-config2": ">=9.0.94"
+	},
+	"suggests": {
+		"fabric-api": "*"
+	},
+	"recommends": {
+		"modmenu": ">=5.0.0"
+	},
+	"breaks": {
+		"customspawns": "*"
+	}
 }

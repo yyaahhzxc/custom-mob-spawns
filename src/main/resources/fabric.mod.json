@@ -8,8 +8,9 @@
 		"AzyLooper"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "https://azylooper.com",
+		"sources": "https://github.com/AzyLooper/custom-mob-spawns",
+		"issues": "https://github.com/AzyLooper/custom-mob-spawns/issues"
 	},
 	"license": "MIT",
 	"icon": "assets/custom-mob-spawns/icon.png",

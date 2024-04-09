@@ -33,9 +33,7 @@
 		"cloth-config2": ">=9.0.94"
 	},
 	"suggests": {
-		"fabric-api": "*"
-	},
-	"recommends": {
+		"fabric-api": "*",
 		"modmenu": ">=5.0.0"
 	},
 	"breaks": {

@@ -61,7 +61,7 @@ public class CustomMobSpawnModifications {
         
         config.mobSpawnRemovals.forEach(removal -> {
             if (removal.biomeId.isBlank() && removal.biomeTag.isBlank())
-                throw new IllegalArgumentException("[Custom Spawns] A removal entry is missing a biome ID or tag!");
+                throw new IllegalArgumentException("[Custom Mob Spawns] A removal entry is missing a biome ID or tag!");
             
             Predicate<BiomeSelectionContext> biomePredicate = removal.biomeId.isBlank() ?
                 BiomeSelectors.tag(biomeTag(removal.biomeTag)) :
@@ -89,7 +89,7 @@ public class CustomMobSpawnModifications {
         
         config.mobSpawnReplacements.forEach(replacement -> {
             if (replacement.biomeId.isBlank() && replacement.biomeTag.isBlank())
-                throw new IllegalArgumentException("[Custom Spawns] A replacement entry is missing a biome ID or tag!");
+                throw new IllegalArgumentException("[Custom Mob Spawns] A replacement entry is missing a biome ID or tag!");
             
             Predicate<BiomeSelectionContext> biomePredicate = replacement.biomeId.isBlank() ?
                 BiomeSelectors.tag(biomeTag(replacement.biomeTag)) :

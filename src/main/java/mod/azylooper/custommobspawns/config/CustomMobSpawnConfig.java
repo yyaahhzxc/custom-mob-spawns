@@ -12,61 +12,77 @@ public class CustomMobSpawnConfig implements ConfigData {
     @ConfigEntry.Gui.PrefixText
     @ConfigEntry.Category(value = "general")
     public int chunkConstant = 17;
-    
+
     @ConfigEntry.Category(value = "general")
     public long rareSpawnTicksToWait = 400L;
-    
+
+    @ConfigEntry.Gui.Tooltip()
     @ConfigEntry.Category(value = "mobGroups")
     @ConfigEntry.Gui.CollapsibleObject
-    public CustomSpawnGroup monsterGroup = new CustomSpawnGroup(70, false, false, 128, 32);
-    
+    public CustomMobSpawnGroup monsterGroup = new CustomMobSpawnGroup(70, false, false, 128, 32);
+
+    @ConfigEntry.Gui.Tooltip()
     @ConfigEntry.Category(value = "mobGroups")
     @ConfigEntry.Gui.CollapsibleObject
-    public CustomSpawnGroup creatureGroup = new CustomSpawnGroup(10, true, true, 128, 32);
-    
+    public CustomMobSpawnGroup creatureGroup = new CustomMobSpawnGroup(10, true, true, 128, 32);
+
+    @ConfigEntry.Gui.Tooltip()
     @ConfigEntry.Category(value = "mobGroups")
     @ConfigEntry.Gui.CollapsibleObject
-    public CustomSpawnGroup ambientGroup = new CustomSpawnGroup(15, true, false, 128, 32);
-    
+    public CustomMobSpawnGroup ambientGroup = new CustomMobSpawnGroup(15, true, false, 128, 32);
+
+    @ConfigEntry.Gui.Tooltip()
     @ConfigEntry.Category(value = "mobGroups")
     @ConfigEntry.Gui.CollapsibleObject
-    public CustomSpawnGroup axolotlGroup = new CustomSpawnGroup(5, true, false, 128, 32);
-    
+    public CustomMobSpawnGroup axolotlGroup = new CustomMobSpawnGroup(5, true, false, 128, 32);
+
+    @ConfigEntry.Gui.Tooltip()
     @ConfigEntry.Category(value = "mobGroups")
     @ConfigEntry.Gui.CollapsibleObject
-    public CustomSpawnGroup waterCreatureGroup = new CustomSpawnGroup(5, true, false, 128, 32);
-    
+    public CustomMobSpawnGroup waterCreatureGroup = new CustomMobSpawnGroup(5, true, false, 128, 32);
+
+    @ConfigEntry.Gui.Tooltip()
     @ConfigEntry.Category(value = "mobGroups")
     @ConfigEntry.Gui.CollapsibleObject
-    public CustomSpawnGroup waterAmbientGroup = new CustomSpawnGroup(20, true, false, 64, 32);
-    
+    public CustomMobSpawnGroup waterAmbientGroup = new CustomMobSpawnGroup(20, true, false, 64, 32);
+
+    @ConfigEntry.Gui.Tooltip()
     @ConfigEntry.Category(value = "mobGroups")
     @ConfigEntry.Gui.CollapsibleObject
-    public CustomSpawnGroup undergroundWaterGroup = new CustomSpawnGroup(5, true, false, 128, 32);
-    
+    public CustomMobSpawnGroup undergroundWaterGroup = new CustomMobSpawnGroup(5, true, false, 128, 32);
+
+    @ConfigEntry.Gui.Tooltip()
+    @ConfigEntry.Category(value = "mobGroups")
+    @ConfigEntry.Gui.CollapsibleObject
+    public CustomMobSpawnGroup miscGroup = new CustomMobSpawnGroup(-1, true, true, 128, 32);
+
+    @ConfigEntry.Gui.Tooltip()
     @ConfigEntry.Category(value = "persistence")
     public boolean passivePersistent = true;
-    
+
+    @ConfigEntry.Gui.Tooltip()
     @ConfigEntry.Category(value = "persistence")
     public boolean hostilePersistent = false;
-    
+
+    @ConfigEntry.Gui.Tooltip()
     @ConfigEntry.Category(value = "persistence")
     public boolean ambientPersistent = false;
-    
+
+    @ConfigEntry.Gui.Tooltip()
     @ConfigEntry.Category(value = "persistence")
     public boolean waterPersistent = false;
-    
+
     @ConfigEntry.Gui.PrefixText
     @ConfigEntry.Category(value = "mobSpawnAdditions")
-    public List<CustomSpawnAddition> mobSpawnAdditions = List.of();
+    public List<CustomMobSpawnAddition> mobSpawnAdditions = List.of();
     
     @ConfigEntry.Gui.PrefixText
     @ConfigEntry.Category(value = "mobSpawnRemovals")
-    public List<CustomSpawnRemoval> mobSpawnRemovals = List.of();
+    public List<CustomMobSpawnRemoval> mobSpawnRemovals = List.of();
     
     @ConfigEntry.Gui.PrefixText
     @ConfigEntry.Category(value = "mobSpawnReplacements")
-    public List<CustomSpawnReplacement> mobSpawnReplacements = List.of();
+    public List<CustomMobSpawnReplacement> mobSpawnReplacements = List.of();
     
     @ConfigEntry.Gui.PrefixText
     @ConfigEntry.Category(value = "spawners")
@@ -90,17 +106,22 @@ public class CustomMobSpawnConfig implements ConfigData {
     @ConfigEntry.Category(value = "spawners")
     public int spawnRange = 4;
     
-    public static class CustomSpawnGroup {
+    public static class CustomMobSpawnGroup {
+        @ConfigEntry.Gui.Tooltip()
         public int capacity;
+        @ConfigEntry.Gui.Tooltip()
         public boolean peaceful;
+        @ConfigEntry.Gui.Tooltip()
         public boolean rare;
+        @ConfigEntry.Gui.Tooltip()
         public int immediateDespawnRange;
+        @ConfigEntry.Gui.Tooltip()
         public int despawnStartRange;
         
-        public CustomSpawnGroup(
+        public CustomMobSpawnGroup(
             int capacity, 
             boolean peaceful, 
-            boolean rare, 
+            boolean rare,
             int immediateDespawnRange, 
             int despawnStartRange
         ) {
@@ -112,7 +133,7 @@ public class CustomMobSpawnConfig implements ConfigData {
         }
     }
     
-    public static class CustomSpawnAddition {
+    public static class CustomMobSpawnAddition {
         public String biomeId;
         public String biomeTag;
         public String mobId;
@@ -121,7 +142,7 @@ public class CustomMobSpawnConfig implements ConfigData {
         public int minCount;
         public int maxCount;
         
-        public CustomSpawnAddition() {
+        public CustomMobSpawnAddition() {
             this.biomeId = "minecraft:plains";
             this.biomeTag = "";
             this.mobId = "minecraft:pig";
@@ -132,19 +153,19 @@ public class CustomMobSpawnConfig implements ConfigData {
         }
     }
     
-    public static class CustomSpawnRemoval {
+    public static class CustomMobSpawnRemoval {
         public String biomeId;
         public String biomeTag;
         public String mobId;
         
-        public CustomSpawnRemoval() {
+        public CustomMobSpawnRemoval() {
             this.biomeId = "minecraft:plains";
             this.biomeTag = "";
             this.mobId = "minecraft:pig";
         }
     }
     
-    public static class CustomSpawnReplacement {
+    public static class CustomMobSpawnReplacement {
         public String biomeId;
         public String biomeTag;
         public String originalMobId;
@@ -155,7 +176,7 @@ public class CustomMobSpawnConfig implements ConfigData {
         public int replacementMinCount;
         public int replacementMaxCount;
         
-        public CustomSpawnReplacement() {
+        public CustomMobSpawnReplacement() {
             this.biomeId = "minecraft:plains";
             this.biomeTag = "";
             this.originalMobId = "minecraft:pig";

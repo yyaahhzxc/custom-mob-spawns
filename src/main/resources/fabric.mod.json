@@ -3,14 +3,13 @@
 	"id": "custom-mob-spawns",
 	"version": "${version}",
 	"name": "Custom Mob Spawns",
-	"description": "Simple configurable mob spawning.\nPort of Custom Spawns to support 1.20 and beyond.\nThis particular build supports from 1.19.3 to 1.20.4 (versions between them works as well).",
+	"description": "Simple configurable mob spawning.\nFork of Custom Spawns that supports 1.20 and beyond.\nThis particular build supports every versions between 1.19.3 and 1.20.4.",
 	"authors": [
 		"AzyLooper"
 	],
 	"contact": {
 		"homepage": "https://azylooper.com",
-		"sources": "https://github.com/AzyLooper/custom-mob-spawns",
-		"issues": "https://github.com/AzyLooper/custom-mob-spawns/issues"
+		"sources": "https://github.com/AzyLooper/custom-mob-spawns"
 	},
 	"license": "MIT",
 	"icon": "assets/custom-mob-spawns/icon.png",

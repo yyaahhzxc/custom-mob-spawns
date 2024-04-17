@@ -28,7 +28,7 @@ public class CustomMobSpawns implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		log(Level.INFO, "Initializing Custom Mob Spawns...");
+		log(Level.INFO, "Initializing...");
 
 		// Add custom spawns
 		CustomMobSpawnModifications.modifySpawns();

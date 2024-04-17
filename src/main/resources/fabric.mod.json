@@ -3,7 +3,7 @@
 	"id": "custom-mob-spawns",
 	"version": "${version}",
 	"name": "Custom Mob Spawns",
-	"description": "Simple configurable mob spawning.\nFork of Custom Spawns that supports 1.20 and beyond.\nThis particular build supports every versions between 1.19.3 and 1.20.4.",
+	"description": "Simple configurable mob spawning.\nFork of Custom Spawns that supports 1.20 and beyond.\nThis particular build supports every versions between 1.19.3 and 1.20.5 under Fabric.",
 	"authors": [
 		"AzyLooper"
 	],
@@ -28,7 +28,7 @@
 	],
 	"depends": {
 		"fabricloader": ">=0.11.3",
-		"minecraft": ">=1.19.3 <=1.20.4",
+		"minecraft": ">=1.19.3 <=1.20.5",
 		"java": ">=17",
 		"cloth-config2": ">=9.0.94"
 	},

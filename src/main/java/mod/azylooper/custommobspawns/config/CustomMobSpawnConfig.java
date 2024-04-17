@@ -10,9 +10,11 @@ import java.util.List;
 @Config(name = "custom-mob-spawns")
 public class CustomMobSpawnConfig implements ConfigData {
     @ConfigEntry.Gui.PrefixText
+    @ConfigEntry.Gui.Tooltip()
     @ConfigEntry.Category(value = "general")
     public int chunkConstant = 17;
 
+    @ConfigEntry.Gui.Tooltip()
     @ConfigEntry.Category(value = "general")
     public long rareSpawnTicksToWait = 400L;
 
@@ -85,24 +87,31 @@ public class CustomMobSpawnConfig implements ConfigData {
     public List<CustomMobSpawnReplacement> mobSpawnReplacements = List.of();
     
     @ConfigEntry.Gui.PrefixText
+    @ConfigEntry.Gui.Tooltip()
     @ConfigEntry.Category(value = "spawners")
     public boolean overrideSpawnerDefaultValues = false;
-    
+
+    @ConfigEntry.Gui.Tooltip()
     @ConfigEntry.Category(value = "spawners")
     public int minSpawnDelay = 200;
-    
+
+    @ConfigEntry.Gui.Tooltip()
     @ConfigEntry.Category(value = "spawners")
     public int maxSpawnDelay = 800;
-    
+
+    @ConfigEntry.Gui.Tooltip()
     @ConfigEntry.Category(value = "spawners")
     public int spawnCount = 4;
-    
+
+    @ConfigEntry.Gui.Tooltip()
     @ConfigEntry.Category(value = "spawners")
     public int maxNearbyEntities = 6;
-    
+
+    @ConfigEntry.Gui.Tooltip()
     @ConfigEntry.Category(value = "spawners")
     public int requiredPlayerRange = 16;
-    
+
+    @ConfigEntry.Gui.Tooltip()
     @ConfigEntry.Category(value = "spawners")
     public int spawnRange = 4;
     
@@ -134,12 +143,19 @@ public class CustomMobSpawnConfig implements ConfigData {
     }
     
     public static class CustomMobSpawnAddition {
+        @ConfigEntry.Gui.Tooltip()
         public String biomeId;
+        @ConfigEntry.Gui.Tooltip()
         public String biomeTag;
+        @ConfigEntry.Gui.Tooltip()
         public String mobId;
+        @ConfigEntry.Gui.Tooltip()
         public SpawnGroup spawnGroup;
+        @ConfigEntry.Gui.Tooltip()
         public int weight;
+        @ConfigEntry.Gui.Tooltip()
         public int minCount;
+        @ConfigEntry.Gui.Tooltip()
         public int maxCount;
         
         public CustomMobSpawnAddition() {
@@ -154,8 +170,11 @@ public class CustomMobSpawnConfig implements ConfigData {
     }
     
     public static class CustomMobSpawnRemoval {
+        @ConfigEntry.Gui.Tooltip()
         public String biomeId;
+        @ConfigEntry.Gui.Tooltip()
         public String biomeTag;
+        @ConfigEntry.Gui.Tooltip()
         public String mobId;
         
         public CustomMobSpawnRemoval() {
@@ -166,14 +185,21 @@ public class CustomMobSpawnConfig implements ConfigData {
     }
     
     public static class CustomMobSpawnReplacement {
+        @ConfigEntry.Gui.Tooltip()
         public String biomeId;
+        @ConfigEntry.Gui.Tooltip()
         public String biomeTag;
+        @ConfigEntry.Gui.Tooltip()
         public String originalMobId;
-        
+        @ConfigEntry.Gui.Tooltip()
         public String replacementMobId;
+        @ConfigEntry.Gui.Tooltip()
         public SpawnGroup replacementSpawnGroup;
+        @ConfigEntry.Gui.Tooltip()
         public int replacementWeight;
+        @ConfigEntry.Gui.Tooltip()
         public int replacementMinCount;
+        @ConfigEntry.Gui.Tooltip()
         public int replacementMaxCount;
         
         public CustomMobSpawnReplacement() {

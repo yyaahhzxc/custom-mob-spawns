@@ -17,9 +17,9 @@ import org.slf4j.event.Level;
 
 import java.util.function.Predicate;
 
-public class CustomMobSpawnModifications {
+public class CustomMobSpawnModifications extends CustomMobSpawns {
     public static void modifySpawns() {
-        CustomMobSpawnConfig config = CustomMobSpawns.SPAWNS_CONFIG;
+        CustomMobSpawnConfig config = SPAWNS_CONFIG;
         
         config.mobSpawnAdditions.forEach(addition -> {
             if (addition.biomeId.isBlank() && addition.biomeTag.isBlank())
@@ -29,7 +29,7 @@ public class CustomMobSpawnModifications {
                 BiomeSelectors.tag(biomeTag(addition.biomeTag)) :
                 BiomeSelectors.includeByKey(biomeKey(addition.biomeId));
 
-            CustomMobSpawns.log(Level.INFO, String.format(
+            print(String.format(
                 "Creating addition for mob '%s' to biome '%s' or tag '%s', to group '%s' with weight %d, min count %d, and max count %d",
                 addition.mobId,
                 addition.biomeId,
@@ -67,7 +67,7 @@ public class CustomMobSpawnModifications {
                 BiomeSelectors.tag(biomeTag(removal.biomeTag)) :
                 BiomeSelectors.includeByKey(biomeKey(removal.biomeId));
             
-            CustomMobSpawns.log(Level.INFO, String.format(
+            print(String.format(
                 "Creating removal for mob '%s' from biome '%s' or tag '%s'",
                 removal.mobId,
                 removal.biomeId,
@@ -89,13 +89,13 @@ public class CustomMobSpawnModifications {
         
         config.mobSpawnReplacements.forEach(replacement -> {
             if (replacement.biomeId.isBlank() && replacement.biomeTag.isBlank())
-                throw new IllegalArgumentException("[Custom Mob Spawns] A replacement entry is missing a biome ID or tag!");
+                error("A replacement entry is missing a biome ID or tag!");
             
             Predicate<BiomeSelectionContext> biomePredicate = replacement.biomeId.isBlank() ?
                 BiomeSelectors.tag(biomeTag(replacement.biomeTag)) :
                 BiomeSelectors.includeByKey(biomeKey(replacement.biomeId));
             
-            CustomMobSpawns.log(Level.INFO, String.format(
+            print(String.format(
                 "Creating replacement for mob '%s' from biome '%s' or tag '%s', with mob '%s', to group '%s' with weight '%d', min count '%d', and max count '%d'",
                 replacement.originalMobId,
                 replacement.biomeId,

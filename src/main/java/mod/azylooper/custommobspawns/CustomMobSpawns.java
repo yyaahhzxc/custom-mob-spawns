@@ -16,10 +16,18 @@ public class CustomMobSpawns implements ModInitializer {
 
 	public static final CustomMobSpawnConfig SPAWNS_CONFIG = AutoConfig.register(CustomMobSpawnConfig.class, GsonConfigSerializer::new).getConfig();
 
-	private static final Logger LOGGER = LoggerFactory.getLogger("Custom Mob Spawns");
+	private static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
-	public static void log(Level level, String message) {
-		LOGGER.atLevel(level).log("[" + MOD_NAME + "] {}", message);
+	public static void print(String message) {
+		LOGGER.info("[" + MOD_NAME + "] {}", message);
+	}
+
+	public static void warn(String message) {
+		LOGGER.warn("\u001b[33m[" + MOD_NAME + "] {}\u001b[0m", message);
+	}
+
+	public static void error(String message) {
+		LOGGER.error("[" + MOD_NAME + "] {}", message);
 	}
 
 	public static Identifier createId(String name) {
@@ -28,9 +36,8 @@ public class CustomMobSpawns implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		log(Level.INFO, "Initializing...");
-
-		// Add custom spawns
+		print("Initializing...");
 		CustomMobSpawnModifications.modifySpawns();
+		print("Successfully initialized!");
 	}
 }

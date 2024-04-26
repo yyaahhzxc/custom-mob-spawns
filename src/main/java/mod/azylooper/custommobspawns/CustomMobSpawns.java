@@ -30,6 +30,10 @@ public class CustomMobSpawns implements ModInitializer {
 		LOGGER.error("[" + MOD_NAME + "] {}", message);
 	}
 
+	public static void crash(String message) {
+		throw new IllegalArgumentException("[" + MOD_NAME + "] " + message);
+	}
+
 	public static Identifier createId(String name) {
 		return new Identifier(MOD_ID, name);
 	}

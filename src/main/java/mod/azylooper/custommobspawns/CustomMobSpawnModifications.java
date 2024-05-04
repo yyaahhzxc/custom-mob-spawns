@@ -15,6 +15,7 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.SpawnSettings;
 import org.slf4j.event.Level;
 
+import java.util.Objects;
 import java.util.function.Predicate;
 
 public class CustomMobSpawnModifications extends CustomMobSpawns {
@@ -38,9 +39,9 @@ public class CustomMobSpawnModifications extends CustomMobSpawns {
                 addition.minCount,
                 addition.maxCount
             ));
-            
+
             BiomeModifications
-                .create(CustomMobSpawns.createId(Integer.toString(addition.hashCode())))
+                .create(createId(Integer.toString(addition.hashCode())))
                 .add(
                     ModificationPhase.ADDITIONS,
                     biomePredicate,
@@ -48,7 +49,7 @@ public class CustomMobSpawnModifications extends CustomMobSpawns {
                         context.getSpawnSettings().addSpawn(
                             addition.spawnGroup,
                             new SpawnSettings.SpawnEntry(
-                                Registries.ENTITY_TYPE.get(entityKey(addition.mobId)),
+                                Objects.requireNonNull(Registries.ENTITY_TYPE.get(entityKey(addition.mobId))),
                                 addition.weight,
                                 addition.minCount,
                                 addition.maxCount
@@ -74,7 +75,7 @@ public class CustomMobSpawnModifications extends CustomMobSpawns {
             ));
             
             BiomeModifications
-                .create(CustomMobSpawns.createId(Integer.toString(removal.hashCode())))
+                .create(createId(Integer.toString(removal.hashCode())))
                 .add(
                     ModificationPhase.REMOVALS,
                     biomePredicate,
@@ -107,7 +108,7 @@ public class CustomMobSpawnModifications extends CustomMobSpawns {
             ));
             
             BiomeModifications
-                .create(CustomMobSpawns.createId(Integer.toString(replacement.hashCode())))
+                .create(createId(Integer.toString(replacement.hashCode())))
                 .add(
                     ModificationPhase.REPLACEMENTS,
                     biomePredicate,
@@ -119,7 +120,7 @@ public class CustomMobSpawnModifications extends CustomMobSpawns {
                         context.getSpawnSettings().addSpawn(
                             replacement.replacementSpawnGroup,
                             new SpawnSettings.SpawnEntry(
-                                Registries.ENTITY_TYPE.get(entityKey(replacement.replacementMobId)),
+                                Objects.requireNonNull(Registries.ENTITY_TYPE.get(entityKey(replacement.replacementMobId))),
                                 replacement.replacementWeight,
                                 replacement.replacementMinCount,
                                 replacement.replacementMaxCount

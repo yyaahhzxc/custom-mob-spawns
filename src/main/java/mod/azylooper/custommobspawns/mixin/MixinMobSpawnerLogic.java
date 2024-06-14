@@ -1,7 +1,7 @@
 package mod.azylooper.custommobspawns.mixin;
 
 import mod.azylooper.custommobspawns.CustomMobSpawns;
-import net.minecraft.world.MobSpawnerLogic;
+import net.minecraft.block.spawner.MobSpawnerLogic;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;

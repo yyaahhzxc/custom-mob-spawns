@@ -132,14 +132,14 @@ public class CustomMobSpawnModifications extends CustomMobSpawns {
     }
     
     private static RegistryKey<Biome> biomeKey(String id) {
-        return RegistryKey.of(RegistryKeys.BIOME, new Identifier(id));
+        return RegistryKey.of(RegistryKeys.BIOME, Identifier.of(id));
     }
     
     private static RegistryKey<EntityType<?>> entityKey(String id) {
-        return RegistryKey.of(RegistryKeys.ENTITY_TYPE, new Identifier(id));
+        return RegistryKey.of(RegistryKeys.ENTITY_TYPE, Identifier.of(id));
     }
     
     private static TagKey<Biome> biomeTag(String tag) {
-        return TagKey.of(RegistryKeys.BIOME, new Identifier(tag));
+        return TagKey.of(RegistryKeys.BIOME, Identifier.of(tag));
     }
 }

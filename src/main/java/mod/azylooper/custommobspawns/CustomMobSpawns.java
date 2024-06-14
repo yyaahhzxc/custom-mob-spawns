@@ -34,7 +34,7 @@ public class CustomMobSpawns implements ModInitializer {
 	}
 
 	public static Identifier createId(String name) {
-		return new Identifier(MOD_ID, name);
+		return Identifier.of(MOD_ID, name);
 	}
 
 	@Override
